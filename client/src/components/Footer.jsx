@@ -13,7 +13,7 @@ const Footer = () => {
 
         <div className='flex gap-16'>
            <a href='mailto:pavanteja.batthula@sasi.ac.in' target='_blank'><img src={assets.mail_icon} alt="" title='Mail us' className='cursor-pointer hover:scale-125 transition-all duration-300'/></a>
-           <a href='https://www.linkedin.com/in/pavantejab/'><img src={assets.linkedin_icon} alt="" title='Let's connect'className='cursor-pointer hover:scale-125 transition-all duration-300' /></a>
+           <a href='https://www.linkedin.com/in/pavantejab/'><img src={assets.linkedin_icon} alt="" title='Lets connect'className='cursor-pointer hover:scale-125 transition-all duration-300' /></a>
            <a href='https://www.instagram.com/t3j4x_'><img src={assets.instagram_icon} alt="" title='Follow our instagram page'className='cursor-pointer hover:scale-125 transition-all duration-300' /></a>
         </div>
     </div>

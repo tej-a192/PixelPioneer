@@ -18,6 +18,7 @@ import rating_star from './rating_star.svg'
 import instagram_icon from './instagram.png'
 import mail_icon from './gmail.png'
 import facebook_icon from './facebook.png'
+import linkedin_icon from './linkedin.png'
 import buy_plan_logo from './buy-plan-logo.png'
 
 export const assets = {
@@ -37,6 +38,7 @@ export const assets = {
     mail_icon,
     instagram_icon,
     facebook_icon,
+    linkedin_icon,
     buy_plan_logo
 }
 

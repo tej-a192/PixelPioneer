@@ -108,10 +108,6 @@ const Login = () => {
             {/* Button */}
             <button type='submit' className='w-full bg-blue-500 text-white mt-5 p-2 rounded-md text-2xl'>{state === 'Login' ? 'Login' : 'Register'}</button>
 
-            {/* Forgot password */}
-            {state === 'Login' && 
-                <p className='cursor-pointer mt-4 text-center'>Forgot password?</p>
-            }
 
             {/* Have or dont have an account? */}
             {state === 'Login' ?

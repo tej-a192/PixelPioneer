@@ -16,10 +16,11 @@ const Login = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [loading, setLoading] = useState(false)
 
     const onSubmitHandler = async (e)=> {
         e.preventDefault()
-
+        setLoading(true)
         try {
             
             if(state === 'Login') {
@@ -44,8 +45,7 @@ const Login = () => {
                     toast.error(data.message)
                 }
             }
-
-
+            setLoading(false)
         } catch (error) {
             toast.error(data.message)
         }
@@ -63,6 +63,7 @@ const Login = () => {
   return (
     <div className='fixed right-0 top-0 left-0 bottom-0 z-10 backdrop-blur-sm bg-black/10 flex justify-center items-center'>
       <motion.form onSubmit={onSubmitHandler} className='relative bg-white p-10 rounded-md text-slate-500' initial={{scale:0}} animate={{scale:1}} exit={{opacity:0}} transition={{duration:0.3}}>
+            <span className={`absolute bg-blue-500 h-1 bottom-0 left-0 rounded-lg ${loading ? 'w-full max-w-md transition-all duration-[10s]' : 'w-0'}`}/>
             {/* Heading */}
             <h1 className='font-medium text-3xl text-center'>{state}</h1>
             

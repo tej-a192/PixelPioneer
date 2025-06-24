@@ -8,9 +8,9 @@ const Testimonials = () => {
       <h1 className='text-2xl md:text-4xl font-semibold'>Customer Testimonials</h1>
       <p className='text-gray-500 text-xl'>What our users say</p>
 
-      <div className='flex gap-6 w-full max-w-6xl mt-10'>
+      <div className='flex flex-col lg:flex-row gap-8 lg:gap-6 w-full max-w-6xl mt-10'>
          {testiMonialsData.map((item, index)=>(
-            <div key={index} className='flex flex-col justify-center items-center text-white text-center bg-black w-full max-w-4xl p-10 rounded-lg hover:scale-105 transition-all duration-300 shadow-md border cursor-pointer'>
+            <div key={index} className='flex flex-col justify-center items-center text-white text-center bg-black w-full p-10 rounded-lg hover:scale-105 transition-all duration-300 shadow-md border cursor-pointer'>
                 <img  width={90} src={item.icon} alt="" />
                 <h2 className='mt-5'>{item.name}</h2>
                 <p className='text-gray-500'>{item.role}</p>

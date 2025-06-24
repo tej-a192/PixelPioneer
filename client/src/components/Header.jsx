@@ -8,14 +8,14 @@ const Header = () => {
   const {setShowLogin} = useContext(AppContext)
 
   return (
-    <motion.div className='flex flex-col justify-center items-center m-20' initial={{opacity:0, y:100}} transition={{duration:1}} whileInView={{opacity:1, y:0}} viewport={{once:true}}>
+    <motion.div className='flex flex-col justify-center items-center m-10 md:m-20' initial={{opacity:0, y:100}} transition={{duration:1}} whileInView={{opacity:1, y:0}} viewport={{once:true}}>
 
-      <div className='inline-flex text-stone-500 items-center text-center gap-2 bg-white border border-neutral-200 rounded-full px-6 py-1'>
+      <div className='inline-flex text-stone-500 items-center text-center gap-2 bg-white border border-neutral-200 rounded-full px-4 py-1 text-sm sm:px-6 sm:text-base'>
         <p>Best text to Image generator</p>
         <img src={assets.star} alt="" />
       </div>
 
-      <h1 className='text-4xl max-w-[300px] sm:text-7xl sm:max-w-[600px] mx-auto text-center mt-10'>Turn text to <span className='text-blue-600'>Image</span>, in seconds.</h1>
+      <h1 className='text-4xl sm:text-5xl md:text-6xl lg:text-7xl max-w-2xl mx-auto text-center mt-10'>Turn text to <span className='text-blue-600'>Image</span>, in seconds.</h1>
       
       <p className='text-center max-w-xl mx-auto mt-5'>Unleash your creativity and generate stunning images with the power of AI.Enter your prompt,and let PixelPioneer bring your imagination to life.</p>  
       
@@ -26,8 +26,8 @@ const Header = () => {
         </button>
       </div>
 
-      <div className='mt-20 ml-20 mr-20'>
-        <ul className='flex gap-6 items-center'>
+      <div className='mt-20 w-full'>
+        <ul className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 justify-center'>
             <li><img className='rounded-lg border-1 cursor-pointer hover:scale-105 transition-all duration-150' src={assets.home_snowhouse} alt="" title='A magical winter night scene with a snowy forest, the Northern Lights illuminating the sky in vibrant colors, and a lone cabin with smoke rising from its chimney.'/></li>
              <li><img className='rounded-lg border-1 cursor-pointer hover:scale-105 transition-all duration-150' src={assets.home_forest} alt="" title='A mystical forest at twilight with glowing mushrooms, enchanted creatures, and sparkling fireflies.'/></li>
             <li><img className='rounded-lg border-1 cursor-pointer hover:scale-105 transition-all duration-150' src={assets.home_fox} alt="" title='Fox in forest covered with snow' /></li>

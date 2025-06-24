@@ -47,7 +47,7 @@ const Login = () => {
             }
             setLoading(false)
         } catch (error) {
-            toast.error(data.message)
+            toast.error(error.response?.data?.message || "An error occurred");
         }
     }
 
@@ -61,9 +61,9 @@ const Login = () => {
 
 
   return (
-    <div className='fixed right-0 top-0 left-0 bottom-0 z-10 backdrop-blur-sm bg-black/10 flex justify-center items-center'>
-      <motion.form onSubmit={onSubmitHandler} className='relative bg-white p-10 rounded-md text-slate-500' initial={{scale:0}} animate={{scale:1}} exit={{opacity:0}} transition={{duration:0.3}}>
-            <span className={`absolute bg-blue-500 h-1 bottom-0 left-0 rounded-lg ${loading ? 'w-full max-w-md transition-all duration-[10s]' : 'w-0'}`}/>
+    <div className='fixed right-0 top-0 left-0 bottom-0 z-10 backdrop-blur-sm bg-black/10 flex justify-center items-center p-4'>
+      <motion.form onSubmit={onSubmitHandler} className='relative bg-white w-full max-w-lg p-6 sm:p-10 rounded-md text-slate-500' initial={{scale:0}} animate={{scale:1}} exit={{opacity:0}} transition={{duration:0.3}}>
+            <span className={`absolute bg-blue-500 h-1 bottom-0 left-0 rounded-lg ${loading ? 'w-full transition-all duration-[10s]' : 'w-0'}`}/>
             {/* Heading */}
             <h1 className='font-medium text-3xl text-center'>{state}</h1>
             
@@ -80,31 +80,22 @@ const Login = () => {
                 state !== 'Login' &&
                 <div className='flex items-center border px-5 py-2 rounded-md gap-2 mt-10 text-xl'>
                     <CiUser />
-                    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder='Enter full name' required className='outline-none'/>
+                    <input type="text" value={name} onChange={(e)=>setName(e.target.value)} placeholder='Enter full name' required className='outline-none w-full'/>
                 </div>
             }
 
             {/* Email */}
             <div className='flex items-center border px-5 py-2 rounded-md gap-2 mt-5 text-xl'>
                 <CiMail/>
-                <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter email' required className='outline-none'/>
+                <input type="email" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter email' required className='outline-none w-full'/>
             </div>
             
             {/* Password */}
             <div className='flex items-center border px-5 py-2 rounded-md gap-2 mt-5 text-xl'>
                 <CiLock />
-                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter password' required className='outline-none'/>
+                <input type="password" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder='Enter password' required className='outline-none w-full'/>
             </div>
-
-            {/* Confrim Password */}
-            {/* {
-            state !== 'Login' &&
-                <div className='flex items-center border px-5 py-2 rounded-md gap-2 mt-5 text-xl'>
-                    <CiLock />
-                    <input type="password" placeholder='Confirm password' required className='outline-none'/>
-                </div>
-            } */}
-
+            
             {/* Button */}
             <button type='submit' className='w-full bg-blue-500 text-white mt-5 p-2 rounded-md text-2xl'>{state === 'Login' ? 'Login' : 'Register'}</button>
 
